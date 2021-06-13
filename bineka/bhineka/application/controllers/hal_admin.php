@@ -44,6 +44,10 @@ class hal_admin extends CI_Controller {
 		$this->load->view('form_tambah');
 	}
 
+	public function lihat_rumah(){
+		$this->load->view('rumah');
+	}
+
 	public function tambah_data(){
 		$dataIn = array(
 			'kd_brg' => $this->input->post('kode'),

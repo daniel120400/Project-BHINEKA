@@ -1,20 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Document</title>
-</head>
-<body>
-    <form action="<?php echo base_url()."index.php/hal_admin/tambah_data"?>" method="POST">
-        kode : <input type="text" name="kode"><br>
-        nama : <input type="text" name="nama"><br>
-        satuan : <input type="text" name="satuan"><br>
-        harga : <input type="text" name="harga"><br>
-        harga beli : <input type="text" name="beli"><br>
-        stok : <input type="text" name="stok"><br>
-        minimum pembelian : <input type="text" name="min"><br>
-        gambar : <input type="text" name="gambar"><br>
-        <input type="submit">  <input type="reset">  
-    </form>
-    
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, icons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="<?php echo base_url('assets/images/icon.png'); ?>" rel="stylesheet" type="image/ico">
+
+    <title>Sistem Transaksi Bhineka</title>
+
+    <!-- Bootstrap -->
+    <link href="<?php echo base_url('assets/bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="<?php echo base_url('assets/nprogress/nprogress.css'); ?>" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="<?php echo base_url('assets/iCheck/skins/flat/green.css'); ?>" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="<?php echo base_url('assets/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css'); ?>" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="<?php echo base_url('assets/css/custom.min.css'); ?>" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+            <center>
+            &nbsp; <a href="index.php" class="fa fa-ship fa-2x" style="color:#fff;"><span><font size="4.95" color="white" face="Helvetica Neue"> BHINEKA . COM</font></span></a>
+            </center>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="<?php echo base_url("assets/images/user1.png"); ?>" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>USER</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <ul class="nav side-menu">
+                  <li><a href="<?php echo base_url()."index.php/hal_admin/lihat_rumah"; ?>"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
+                  </li>
+                  <li><a href="<?php echo base_url()."index.php/hal_admin"; ?>"><i class="fa fa-list"></i> Daftar Barang<span class="fa fa-chevron"></span></a>
+                  </li>
+                  <li><a href="<?php echo base_url()."index.php/hal_admin/baca_form"; ?>"><i class="fa fa-desktop"></i> Tambah Barang<span class="fa fa-chevron"></span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- /sidebar menu -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+              <nav class="nav navbar-nav">
+              <ul class=" navbar-right">
+                <li class="nav-item dropdown open" >
+                  <a href="#" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                  <img src="<?php echo base_url("assets/images/user1.png"); ?>" alt="">USER
+                  </a>
+                  <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="<?php echo base_url()."index.php/welcome/logout"; ?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content - HALAMAN UTAMA ISI DISINI -->
+        <div class="right_col" role="main">
+          <center><font size="6">Tambah Data</font></center>
+          <form action="<?php echo base_url()."index.php/hal_admin/tambah_data"?>" method="POST">
+            
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Kode Produk</label>
+              <div class="col-md-6 col-sm-6 ">
+                <input type="text" name="kode" class="form-control" size="4" required>
+              </div>
+            </div>
+
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Nama Produk</label>
+              <div class="col-md-6 col-sm-6">
+                <input type="text" name="nama" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Satuan(KG)</label>
+              <div class="col-md-6 col-sm-6 ">
+                <input type="text" name="satuan" class="form-control" size="4" required>
+              </div>
+            </div>
+
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Harga Jual</label>
+              <div class="col-md-6 col-sm-6">
+                <input type="text" name="harga" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Harga Beli</label>
+              <div class="col-md-6 col-sm-6 ">
+                <input type="text" name="beli" class="form-control" size="4" required>
+              </div>
+            </div>
+
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Stok</label>
+              <div class="col-md-6 col-sm-6">
+                <input type="text" name="stok" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Minimum Beli</label>
+              <div class="col-md-6 col-sm-6 ">
+                <input type="text" name="min" class="form-control" size="4" required>
+              </div>
+            </div>
+
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Gambar</label>
+              <div class="col-md-6 col-sm-6">
+                <input type="text" name="gambar" class="form-control" required>
+              </div>
+            </div>
+                  
+            
+            <div class="item form-group">
+              <div  class="col-md-6 col-sm-6 offset-md-3">
+                <input type="submit" name="submit" class="btn btn-primary" value="Simpan">
+              </div>
+            </div>
+                  
+          </form>
+
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            @ 2021 Web Bhineka.Com
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="<?php echo base_url("assets/jquery/dist/jquery.min.js"); ?>"></script>
+    <!-- Bootstrap -->
+    <script src="<?php echo base_url("assets/bootstrap/dist/js/bootstrap.bundle.min.js"); ?>"></script>
+    <!-- FastClick -->
+    <script src="<?php echo base_url("assets/fastclick/lib/fastclick.js"); ?>"></script>
+    <!-- NProgress -->
+    <script src="<?php echo base_url("assets/nprogress/nprogress.js"); ?>"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="<?php echo base_url("assets/bootstrap-progressbar/bootstrap-progressbar.min.js"); ?>"></script>
+    <!-- iCheck -->
+    <script src="<?php echo base_url("assets/iCheck/icheck.min.js"); ?>"></script>
+    <!-- Skycons -->
+    <script src="<?php echo base_url("assets/skycons/skycons.js"); ?>"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="<?php echo base_url("assets/js/custom.min.js"); ?>"></script>
+
+  </body>
 </html>
